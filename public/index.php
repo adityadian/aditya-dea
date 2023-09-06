@@ -1,5 +1,10 @@
 <?php
-
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+	res.setHeader('Access-Control-Allow-Header', 'Content-Type, Authorization');
+	next();
+})
 define('KAMU_START', microtime(true));
 
 /**
